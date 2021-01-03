@@ -4,18 +4,17 @@ using UnityEngine;
 
 public class PointerDoor1 : MonoBehaviour
 {
-    [SerializeField] public GameObject _door1Over = null;
-    [SerializeField] public GameObject _folderDoor = null;
-    [SerializeField] public GameObject _image = null;
-    [SerializeField] public GameObject _groupPanelDoor = null;
+    [SerializeField] protected GameObject _door1Over = null;
+    [SerializeField] protected GameObject _image = null;
+    [SerializeField] protected GameObject _panelDoor1 = null;
 
-    public Renderer rend;
+    [SerializeField] protected Renderer rend;
 
     void Start()
     {
         rend = GetComponent<Renderer>();
         _door1Over.gameObject.SetActive(false);
-        _groupPanelDoor.gameObject.SetActive(false);
+        _panelDoor1.gameObject.SetActive(false);
     }
 
 
@@ -36,9 +35,8 @@ public class PointerDoor1 : MonoBehaviour
 
     void OnMouseDown()
     {
-        _folderDoor.gameObject.SetActive(false);
         _image.gameObject.SetActive(false);
-        _groupPanelDoor.gameObject.SetActive(true);
+        _panelDoor1.gameObject.SetActive(true);
 
     }
 

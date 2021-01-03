@@ -8,6 +8,7 @@ public class MenuPause : MonoBehaviour
 
     [SerializeField] private GameObject _pausedPanel = null;
     [SerializeField] private GameObject _panelSureQuit = null;
+    [SerializeField] private GameObject _FirstViewGame = null;
 
     void Start()
     {
@@ -23,6 +24,7 @@ public class MenuPause : MonoBehaviour
     {
 
         _pausedPanel.gameObject.SetActive(false);
+        _FirstViewGame.gameObject.SetActive(true);
         Time.timeScale = 1;
     }
 
@@ -31,6 +33,7 @@ public class MenuPause : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             _pausedPanel.gameObject.SetActive(true);
+            _FirstViewGame.gameObject.SetActive(false);
             Time.timeScale = 0;
         }
     }

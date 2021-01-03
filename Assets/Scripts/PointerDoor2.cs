@@ -6,18 +6,16 @@ using UnityEngine.UI;
 public class PointerDoor2 : MonoBehaviour
 {
     [SerializeField] private GameObject _door2Over = null;
-    [SerializeField] private GameObject _folderDoor = null;
     [SerializeField] private GameObject _image = null;
-    [SerializeField] private GameObject _groupPanelDoor = null;
     [SerializeField] private GameObject _panelDoor2 = null;
 
-    private Renderer rend;
+    [SerializeField] protected Renderer rend;
 
     void Start()
     {
         rend = GetComponent<Renderer>();
         _door2Over.gameObject.SetActive(false);
-        _groupPanelDoor.gameObject.SetActive(false);
+        _panelDoor2.gameObject.SetActive(false);
     }
 
 
@@ -29,6 +27,7 @@ public class PointerDoor2 : MonoBehaviour
     void OnMouseEnter()
     {
         _door2Over.gameObject.SetActive(true);
+        //Si la souris entre dans la zone de la porte 2 une surbrillance apparait.
     }
 
     void OnMouseExit()
@@ -38,9 +37,7 @@ public class PointerDoor2 : MonoBehaviour
 
     void OnMouseDown()
     {
-        _folderDoor.gameObject.SetActive(false);
         _image.gameObject.SetActive(false);
-        //_groupPanelDoor.gameObject.SetActive(true);
         _panelDoor2.gameObject.SetActive(true);
 
     }
